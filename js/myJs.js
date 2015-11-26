@@ -1,4 +1,4 @@
-var bt=document.getElementById("bt-1");
+			var bt=document.getElementById("bt-1");
 			var bt_2=document.getElementsByClassName("x");
 			var follow=document.getElementsByClassName("follow");
 			var rem=document.getElementsByClassName("remind");
@@ -177,53 +177,18 @@ var bt=document.getElementById("bt-1");
 					pg_bt[i].style.color="#666";
 				}
 			}
-			pg_bt[0].onclick=function(){
-				getLessons(1,20,l_tmp);
-				pg_tmp=1;
-				colorchange();
-				pg_bt[0].style.color="#39a030";
-			}
-			pg_bt[1].onclick=function(){
-				getLessons(2,20,l_tmp);
-				pg_tmp=2;
-				colorchange();
-				pg_bt[1].style.color="#39a030";
-			}
-			pg_bt[2].onclick=function(){
-				getLessons(3,20,l_tmp);
-				pg_tmp=3;
-				colorchange();
-				pg_bt[2].style.color="#39a030";
-			}
-			pg_bt[3].onclick=function(){
-				getLessons(4,20,l_tmp);
-				pg_tmp=4;
-				colorchange();
-				pg_bt[3].style.color="#39a030";
-			}
-			pg_bt[4].onclick=function(){
-				getLessons(5,20,l_tmp);
-				pg_tmp=5;
-				colorchange();
-				pg_bt[4].style.color="#39a030";
-			}
-			pg_bt[5].onclick=function(){
-				getLessons(6,20,l_tmp);
-				pg_tmp=6;
-				colorchange();
-				pg_bt[5].style.color="#39a030";
-			}
-			pg_bt[6].onclick=function(){
-				getLessons(7,20,l_tmp);
-				pg_tmp=7;
-				colorchange();
-				pg_bt[6].style.color="#39a030";
-			}
-			pg_bt[7].onclick=function(){
-				getLessons(8,20,l_tmp);
-				pg_tmp=8;
-				colorchange();
-				pg_bt[7].style.color="#39a030";
+			function pageClick(){
+				function helper(i){
+					return function(){
+							getLessons(i,20,l_tmp);
+							pg_tmp=i;
+							colorchange();
+							pg_bt[i].style.color="#39a030";
+					}
+				}
+				for(var i=0;i<8;i++){
+					pg_bt[i].onclick=helper(i);
+				}
 			}
 			pg_img2[0].onclick=function(){
 				if(pg_tmp==8){
@@ -346,328 +311,35 @@ var bt=document.getElementById("bt-1");
 						 		t_lescopy[4].childNodes[1].innerHTML=ls_copy.list[i].price;
 						 		u[i]=String(ls_copy.list[i].bigPhotoUrl);
 						 		}
-						 		//一下内容我不得已才这么写的。。。写成循环就报错
-						 		t_lesson[0].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[0];
-									details[0].childNodes[0].innerHTML=ls_copy.list[0].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[0].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[0].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[0].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[0].description;
-						 		}
-						 		t_lesson[0].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[1].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[1];
-									details[0].childNodes[0].innerHTML=ls_copy.list[1].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[1].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[1].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[1].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[1].description;
-						 		}
-						 		t_lesson[1].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[2].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[2];
-									details[0].childNodes[0].innerHTML=ls_copy.list[2].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[2].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[2].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[2].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[2].description;
-						 		}
-						 		t_lesson[2].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[3].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[3];
-									details[0].childNodes[0].innerHTML=ls_copy.list[3].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[3].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[3].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[3].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[3].description;
-						 		}
-						 		t_lesson[3].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[4].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[4];
-									details[0].childNodes[0].innerHTML=ls_copy.list[4].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[4].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[4].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[4].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[4].description;
-						 		}
-						 		t_lesson[4].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[5].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[5];
-									details[0].childNodes[0].innerHTML=ls_copy.list[5].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[5].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[5].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[5].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[5].description;
-						 		}
-						 		t_lesson[5].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[6].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[6];
-									details[0].childNodes[0].innerHTML=ls_copy.list[6].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[6].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[6].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[6].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[6].description;
-						 		}
-						 		t_lesson[6].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[7].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[7];
-									details[0].childNodes[0].innerHTML=ls_copy.list[7].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[7].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[7].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[7].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[7].description;
-						 		}
-						 		t_lesson[7].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[8].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[8];
-									details[0].childNodes[0].innerHTML=ls_copy.list[8].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[8].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[8].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[8].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[8].description;
-						 		}
-						 		t_lesson[8].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[9].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[9];
-									details[0].childNodes[0].innerHTML=ls_copy.list[9].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[9].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[9].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[9].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[9].description;
-								}
-						 		t_lesson[9].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[10].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[10];
-									details[0].childNodes[0].innerHTML=ls_copy.list[10].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[10].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[10].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[10].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[10].description;
-						 		}
-						 		t_lesson[10].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[11].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[11];
-									details[0].childNodes[0].innerHTML=ls_copy.list[11].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[11].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[11].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[11].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[11].description;
-						 		}
-						 		t_lesson[11].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[12].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[12];
-									details[0].childNodes[0].innerHTML=ls_copy.list[12].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[12].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[12].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[12].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[12].description;
-						 		}
-						 		t_lesson[12].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[13].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[13];
-									details[0].childNodes[0].innerHTML=ls_copy.list[13].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[13].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[13].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[13].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[13].description;
-						 		}
-						 		t_lesson[13].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[14].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[14];
-									details[0].childNodes[0].innerHTML=ls_copy.list[14].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[14].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[14].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[14].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[14].description;
-						 		}
-						 		t_lesson[14].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[15].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[15];
-									details[0].childNodes[0].innerHTML=ls_copy.list[15].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[15].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[15].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[15].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[15].description;
-						 		}
-						 		t_lesson[15].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[16].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[16];
-									details[0].childNodes[0].innerHTML=ls_copy.list[16].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[16].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[16].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[16].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[16].description;
-						 		}
-						 		t_lesson[16].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[17].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[17];
-									details[0].childNodes[0].innerHTML=ls_copy.list[17].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[17].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[17].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[17].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[17].description;
-						 		}
-						 		t_lesson[17].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[18].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[1];
-									details[0].childNodes[0].innerHTML=ls_copy.list[18].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[18].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[18].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[18].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[18].description;
-						 		}
-						 		t_lesson[18].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
-						 		t_lesson[19].onmousemove=function(){
-						 			var y=encodeURIComponent(window.event.clientY)+"px";
-									var x=encodeURIComponent(window.event.clientX)+"px";
-									big_lesson[0].style.top=y;
-									big_lesson[0].style.left=x;
-									big_lesson[0].style.display="inline-block";
-									big_imgs[0].childNodes[0].src=u[19];
-									details[0].childNodes[0].innerHTML=ls_copy.list[19].name;
-									d_fans[0].childNodes[1].innerHTML=ls_copy.list[19].learnerCount;
-									publish.childNodes[1].innerHTML=ls_copy.list[19].provider;
-									classify.childNodes[1].innerHTML=ls_copy.list[19].categoryName;
-									bl_bottom[0].innerHTML=ls_copy.list[19].description;
-						 		}
-						 		t_lesson[19].onmouseout=function(){
-						 			big_lesson[0].style.display="none";
-						 		}
+						 		getMsg();
+						 		function getMsg(){
+						 			function helper_1(i){
+						 				return function(){
+						 				var y=encodeURIComponent(window.event.clientY)+"px";
+										var x=encodeURIComponent(window.event.clientX)+"px";
+										big_lesson[0].style.top=y;
+										big_lesson[0].style.left=x;
+										big_lesson[0].style.display="inline-block";
+										big_imgs[0].childNodes[0].src=u[i];
+										details[0].childNodes[0].innerHTML=ls_copy.list[i].name;
+										d_fans[0].childNodes[1].innerHTML=ls_copy.list[i].learnerCount;
+										publish.childNodes[1].innerHTML=ls_copy.list[i].provider;
+										classify.childNodes[1].innerHTML=ls_copy.list[i].categoryName;
+										bl_bottom[0].innerHTML=ls_copy.list[i].description;	
+						 				}
+						 			}
+						 			function helper_2(i){
+						 				return function(){
+						 					big_lesson[0].style.display="none";
+						 				}
+						 			}
+						 			for(var i=0;i<20;i++){
+						 				t_lesson[i].onmousemove=helper_1(i);
+						 				t_lesson[i].onmouseout=helper_2(i);
+						 			}
 
+						 		}
+						 		
 						}else{
 							alert("Request was unsuccessful:"+xhr.staturs);
 						}
@@ -734,6 +406,7 @@ var bt=document.getElementById("bt-1");
 			list[0].style.backgroundColor="#333";
 			carousel(1);
 			getRemind();
+			pageClick();
 			getLessons(1,20,10);
 			getHotLessons();
 			pg_bt[0].style.color="#39a030";
